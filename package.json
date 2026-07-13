@@ -1,0 +1,95 @@
+{
+  "name": "react-native-screenshot-shield",
+  "version": "1.0.0",
+  "description": "Prevent screenshots & screen recording in React Native (iOS + Android). Fixes the iOS secure-view bug that shrinks the React Navigation bottom tab bar. Supports both the old bridge and the new architecture (Fabric/TurboModules).",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/src/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "react-native-screenshot-shield.podspec",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "clean": "del-cli lib",
+    "prepack": "bob build",
+    "release": "npm run prepack && npm publish"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "screenshot",
+    "screenshot-prevent",
+    "screen-recording",
+    "screen-capture",
+    "flag-secure",
+    "secure-view",
+    "privacy",
+    "security",
+    "turbomodule",
+    "fabric"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devendra-lgtm/react-native-screenshot.git"
+  },
+  "author": "Devendra Sharma <devendra@moonstack.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devendra-lgtm/react-native-screenshot/issues"
+  },
+  "homepage": "https://github.com/devendra-lgtm/react-native-screenshot#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.44",
+    "del-cli": "^5.1.0",
+    "react": "18.2.0",
+    "react-native": "0.74.0",
+    "react-native-builder-bob": "^0.30.0",
+    "typescript": "^5.3.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "RNScreenshotShieldSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.screenshotshield"
+    }
+  }
+}

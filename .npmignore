@@ -1,0 +1,13 @@
+# Sources are shipped, but tests/config are not needed by consumers
+example/
+__tests__/
+coverage/
+.github/
+android/build/
+ios/build/
+*.log
+.editorconfig
+.watchmanconfig
+tsconfig.json
+tsconfig.build.json
+babel.config.js
